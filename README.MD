@@ -11,4 +11,4 @@ If you want development -> use command
 
 `npm run dev`
 
-Welcome aboard, Captain!
+**Welcome aboard, Captain!**
