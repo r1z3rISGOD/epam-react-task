@@ -1,0 +1,15 @@
+$color: #e55f64;
+$font: "Roboto", sans-serif;
+
+.search-settings__button {
+  width: 275px;
+  height: 50px;
+  color: white;
+  background-color: $color;
+  border: none;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  font-family: $font;
+  cursor: pointer;
+}

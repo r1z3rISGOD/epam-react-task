@@ -1,0 +1,29 @@
+$color: #e55f64;
+$font: "Roboto", sans-serif;
+
+.search-filter__button {
+  width: 150px;
+  background-color: #3c3c3c;
+  height: 35px;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 1.3rem;
+  font-family: $font;
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+.search-filter__button-active {
+  width: 100px;
+  background-color: $color;
+}
+
+.search-filter {
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}

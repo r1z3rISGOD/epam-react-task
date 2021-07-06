@@ -1,0 +1,19 @@
+$width: 100%;
+$color: #e55f64;
+$font: "Roboto", sans-serif;
+
+.results-body {
+  width: 90%;
+  margin: auto;
+  font-family: $font;
+  font-size: 5rem;
+}
+
+.results-body-container {
+  background-color: #fcfffd;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
