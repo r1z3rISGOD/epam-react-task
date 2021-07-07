@@ -1,5 +1,4 @@
-$color: #e55f64;
-$font: "Roboto", sans-serif;
+@import "./src/_variables/variables.scss";
 
 .results-sort__text {
   font-size: 1.5rem;

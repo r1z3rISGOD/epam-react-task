@@ -1,5 +1,4 @@
-$width: 100%;
-$color: #e55f64;
+@import "./src/_variables/variables.scss";
 
 .search__input {
   border-top: none;

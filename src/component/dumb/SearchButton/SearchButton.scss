@@ -1,5 +1,4 @@
-$color: #e55f64;
-$font: "Roboto", sans-serif;
+@import "./src/_variables/variables.scss";
 
 .search-settings__button {
   width: 275px;
