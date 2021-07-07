@@ -4,11 +4,17 @@ import SearchButton from "../SearchButton/SearchButton";
 import "./SearchSettings.scss"
 
 
-export default function SearchSettings() {
+export default function SearchSettings(props) {
     return(
         <div className="search-settings">
-            <SearchFilter/>
-            <SearchButton/>
+            <SearchFilter
+                activeTitle={props.activeTitle}
+                activeGenre={props.activeGenre}
+            />
+            <SearchButton
+                searchData={props.searchData}
+                searchSetting={props.searchSetting}
+            />
         </div>
     )
 }

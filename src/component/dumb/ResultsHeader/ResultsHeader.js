@@ -9,9 +9,9 @@ export default function ResultsHeader(props) {
         <div className="results-header">
             <div className="results-data">
                 <ErrorBoundary>
-                    <ResultsCount number={props.number}/>
+                    <ResultsCount resultsCount={props.resultsCount}/>
                 </ErrorBoundary>
-                <ResultsSort/>
+                <ResultsSort resultsCount={props.resultsCount}/>
             </div>
         </div>
     )

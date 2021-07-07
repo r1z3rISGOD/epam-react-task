@@ -4,9 +4,11 @@ import ResultsHeader from "../../dumb/ResultsHeader/ResultsHeader";
 
 export default class Results extends React.Component {
     render() {
+        const {resultsCount} = this.props;
+
         return(
             <>
-                <ResultsHeader number={7}/>
+                <ResultsHeader resultsCount={resultsCount}/>
                 <ResultsBody/>
             </>
         )

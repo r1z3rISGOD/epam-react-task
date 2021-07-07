@@ -3,13 +3,19 @@ import PropTypes from "prop-types"
 import "./ResultsCount.scss"
 
 export default function ResultsCount(props) {
-    return(
-        <span className="results-count">
-            {props.number} movies found
+    if(props.resultsCount > 0) {
+        return (
+            <span className="results-count">
+            {props.resultsCount} movies found
         </span>
-    )
+        )
+    } else {
+        return (
+            <></>
+        )
+    }
 }
 
 ResultsCount.propTypes = {
-    number: PropTypes.number.isRequired
+    resultsCount: PropTypes.number.isRequired
 }
