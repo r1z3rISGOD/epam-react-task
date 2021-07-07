@@ -1,4 +1,4 @@
-import {ACTION_CHANGE_SEARCH_DATA, ACTION_CHANGE_SEARCH_SETTING} from "../index";
+import {ACTION_CHANGE_SEARCH_DATA, ACTION_CHANGE_SEARCH_SETTING, ACTION_CHANGE_RESULTS_SORT} from "../index";
 
 export const changeSearchData = () => {
     const newSearchData = document.querySelector('.search__input');
@@ -13,5 +13,13 @@ export const changeSearchSetting = () => {
     return {
         type: ACTION_CHANGE_SEARCH_SETTING,
         payload: newSearchSetting.value
+    }
+}
+
+export const changeResultsSort = () => {
+    const newResultsSort = document.querySelector('.results-sort__link-active')
+    return {
+        type: ACTION_CHANGE_RESULTS_SORT,
+        payload: newResultsSort.value
     }
 }

@@ -11,7 +11,11 @@ export default function ResultsHeader(props) {
                 <ErrorBoundary>
                     <ResultsCount resultsCount={props.resultsCount}/>
                 </ErrorBoundary>
-                <ResultsSort resultsCount={props.resultsCount}/>
+                <ResultsSort
+                    resultsCount={props.resultsCount}
+                    resultsSort={props.resultsSort}
+                    activeSort={props.activeSort}
+                />
             </div>
         </div>
     )

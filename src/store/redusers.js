@@ -1,4 +1,4 @@
-import {ACTION_CHANGE_SEARCH_DATA, ACTION_CHANGE_SEARCH_SETTING} from "../index";
+import {ACTION_CHANGE_SEARCH_DATA, ACTION_CHANGE_SEARCH_SETTING, ACTION_CHANGE_RESULTS_SORT} from "../index";
 
 const initialState = {
     searchData: "",
@@ -13,7 +13,10 @@ export const rootReducer = (state = initialState, action) => {
             return {...state, searchData: action.payload};
 
         case ACTION_CHANGE_SEARCH_SETTING:
-            return {...state, searchSetting: action.payload}
+            return {...state, searchSetting: action.payload};
+
+        case ACTION_CHANGE_RESULTS_SORT:
+            return {...state, resultsSort: action.payload}
     }
 
     return state;

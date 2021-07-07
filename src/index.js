@@ -8,6 +8,7 @@ import {rootReducer} from "./store/redusers";
 
 export const ACTION_CHANGE_SEARCH_DATA = "ACTION_CHANGE_FIRST_NAME";
 export const ACTION_CHANGE_SEARCH_SETTING = "ACTION_CHANGE_SECOND_NAME";
+export const ACTION_CHANGE_RESULTS_SORT = "ACTION_CHANGE_RESULTS_SORT"
 
 const store = createStore(rootReducer)
 

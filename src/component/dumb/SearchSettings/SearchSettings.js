@@ -8,8 +8,7 @@ export default function SearchSettings(props) {
     return(
         <div className="search-settings">
             <SearchFilter
-                activeTitle={props.activeTitle}
-                activeGenre={props.activeGenre}
+                activeSetting={props.activeSetting}
             />
             <SearchButton
                 searchData={props.searchData}

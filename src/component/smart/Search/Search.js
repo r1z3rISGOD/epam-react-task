@@ -7,31 +7,28 @@ import "./Search.scss"
 
 export default class Search extends React.Component {
 
-    activeTitle = () => {
+    activeSetting = (item) => {
         const genre = document.querySelector(".search-filter__button-genre");
         const title = document.querySelector(".search-filter__button-title");
         genre.classList.remove("search-filter__button-active");
-        title.classList.add("search-filter__button-active");
-    }
-
-    activeGenre = () => {
-        const genre = document.querySelector(".search-filter__button-genre");
-        const title = document.querySelector(".search-filter__button-title");
         title.classList.remove("search-filter__button-active");
-        genre.classList.add("search-filter__button-active");
+        item.classList.add("search-filter__button-active");
     }
 
     render() {
-        const {searchData, searchSetting} = this.props
+        const {searchData, searchSetting} = this.props;
+        const {activeSetting} = this;
+
         return(
             <div className="search">
                 <SearchHeadings/>
-                <SearchInput/>
+                <SearchInput
+                    searchData={searchData}
+                    searchSetting={searchSetting}/>
                 <SearchSettings
                     searchData={searchData}
                     searchSetting={searchSetting}
-                    activeTitle={this.activeTitle}
-                    activeGenre={this.activeGenre}
+                    activeSetting={activeSetting}
                 />
             </div>
         )
