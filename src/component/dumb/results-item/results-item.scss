@@ -21,16 +21,23 @@
   display: flex;
   justify-content: space-between;
   font-family: $font;
+  margin-top: 15px;
 }
 
 .item-data__year {
-
+  padding: 0 5px;
+  border: 1px solid black;
+  height: fit-content;
+  border-radius: 2px;
+  background-color: transparent;
 }
 
 .item-data__title {
-
+font-weight: bold;
+  text-align: left;
 }
 
 .item-data__genres {
-
+  color: gray;
+  font-size: 0.8rem;
 }
