@@ -1,0 +1,22 @@
+$width: 100%;
+
+html {
+  scroll-behavior: smooth;
+}
+
+.app-wrapper {
+  width: $width;
+}
+
+.app-header {
+  background: url("./netflix-bg.jpg") no-repeat center center, #555555;
+  background-blend-mode: multiply;
+  background-size: 150%;
+  width: $width;
+  min-height: 400px;
+}
+
+body {
+  margin: 0;
+}
+

@@ -1,0 +1,43 @@
+@import "./src/_variables/variables.scss";
+
+.results-body {
+  width: 85%;
+  height: 100%;
+  margin: auto;
+}
+
+.results-body__text {
+  font-family: $font;
+  font-size: 5rem;
+}
+
+.results-body__films {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.results-body__no-films {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.results-body-container {
+  background-color: #fcfffd;
+  min-height: 100vh;
+}
+
+.results-body__img {
+  width: 100px;
+  height: 200px;
+}
+
+.results-body__item {
+  width: 100px;
+  height: 200px;
+}

@@ -1,23 +1,54 @@
-import {ACTION_CHANGE_SEARCH_DATA, ACTION_CHANGE_SEARCH_SETTING, ACTION_CHANGE_RESULTS_SORT} from "../index";
+import {
+  CHANGE_SEARCH_REQUESTED_DATA,
+  CHANGE_TYPE_OF_SEARCH,
+  CHANGE_TYPE_OF_RESULTS_SORTING,
+  PUT_FETCHED_ARRAY_TO_STORE,
+  PUT_OPENED_FILM_TO_STORE,
+  PUT_OPENED_FILMS_GENRE_TO_STORE,
+  CLEAR_STORE
+} from '../index'
 
-const initialState = {
-    searchData: "",
-    searchSetting: "TITLE",
-    resultsCount: 2,
-    resultsSort: "rating"
-};
+export const initialState = {
+  searchData: '',
+  searchSetting: 'title',
+  resultsSort: 'vote_average',
+  fetchedData: [],
+  filmHasOpened: false,
+  openedFilm: {},
+  openedFilmsGenre: null
+}
 
 export const rootReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case ACTION_CHANGE_SEARCH_DATA:
-            return {...state, searchData: action.payload};
+  switch (action.type) {
+    case CHANGE_SEARCH_REQUESTED_DATA:
+      return { ...state, searchData: action.payload }
 
-        case ACTION_CHANGE_SEARCH_SETTING:
-            return {...state, searchSetting: action.payload};
+    case CHANGE_TYPE_OF_SEARCH:
+      return { ...state, searchSetting: action.payload }
 
-        case ACTION_CHANGE_RESULTS_SORT:
-            return {...state, resultsSort: action.payload}
-    }
+    case CHANGE_TYPE_OF_RESULTS_SORTING:
+      return { ...state, resultsSort: action.payload }
 
-    return state;
+    case PUT_FETCHED_ARRAY_TO_STORE:
+      return { ...state, fetchedData: action.payload }
+
+    case PUT_OPENED_FILM_TO_STORE:
+      return { ...state, openedFilm: action.payload, filmHasOpened: true }
+
+    case PUT_OPENED_FILMS_GENRE_TO_STORE:
+      return { ...state, openedFilmsGenre: action.payload }
+
+    case CLEAR_STORE:
+      return {
+        ...state,
+        searchData: '',
+        searchSetting: 'title',
+        fetchedData: [],
+        filmHasOpened: false,
+        openedFilm: {},
+        openedFilmsGenre: null
+      }
+  }
+
+  return state
 }

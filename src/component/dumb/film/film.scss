@@ -1,0 +1,84 @@
+@import "./src/_variables/variables.scss";
+
+.film {
+  width: 85%;
+  margin: auto;
+  padding-bottom: 50px;
+}
+
+.film-data__title-rating {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.film-data__date-runtime {
+  margin-bottom: 30px;
+}
+
+.film-body__img {
+  width: 30%;
+}
+
+.film-body {
+  display: flex;
+  flex-direction: row;
+}
+
+.film__search-button {
+  width: 130px;
+  height: 50px;
+  margin-top: 25px;
+  font-size: 1rem;
+  font-family: $font;
+  color: $color;
+  font-weight: bold;
+}
+
+.film-data {
+  color: white;
+  width: 50%;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+.film-data__title {
+  font-size: 3rem;
+  font-family: $font;
+  color: $color;
+}
+
+.film-data__rating {
+  margin-left: 20px;
+  font-size: 2rem;
+  font-family: $font;
+  border-radius: 50%;
+  border: 1px solid greenyellow;
+  color: greenyellow;
+  padding: 10px;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.film-data__date {
+  font-family: $font;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.film-data__time {
+  font-family: $font;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 30px;
+}
+
+.film-data__overview {
+  font-family: $font;
+  font-size: 1.5rem;
+}

@@ -1,0 +1,15 @@
+@import "./src/_variables/variables.scss";
+
+.search__heading-1 {
+  font-size: 1.5rem;
+  margin: 0;
+  padding-top: 25px;
+  padding-bottom: 55px;
+  color: $color;
+  font-family: $font;
+}
+
+.film-heading {
+  display: flex;
+  justify-content: space-between;
+}

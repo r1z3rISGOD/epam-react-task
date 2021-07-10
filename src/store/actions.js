@@ -1,25 +1,57 @@
-import {ACTION_CHANGE_SEARCH_DATA, ACTION_CHANGE_SEARCH_SETTING, ACTION_CHANGE_RESULTS_SORT} from "../index";
+import {
+  CHANGE_SEARCH_REQUESTED_DATA,
+  CHANGE_TYPE_OF_SEARCH,
+  CHANGE_TYPE_OF_RESULTS_SORTING,
+  PUT_FETCHED_ARRAY_TO_STORE,
+  PUT_OPENED_FILM_TO_STORE,
+  PUT_OPENED_FILMS_GENRE_TO_STORE,
+  CLEAR_STORE
+} from '../index'
 
-export const changeSearchData = () => {
-    const newSearchData = document.querySelector('.search__input');
-    return {
-        type: ACTION_CHANGE_SEARCH_DATA,
-        payload: newSearchData.value
-    }
+export const changeSearchRequestedData = (data) => {
+  return {
+    type: CHANGE_SEARCH_REQUESTED_DATA,
+    payload: data
+  }
 }
 
-export const changeSearchSetting = () => {
-    const newSearchSetting = document.querySelector('.search-filter__button-active')
-    return {
-        type: ACTION_CHANGE_SEARCH_SETTING,
-        payload: newSearchSetting.value
-    }
+export const changeTypeOfSearch = (data) => {
+  return {
+    type: CHANGE_TYPE_OF_SEARCH,
+    payload: data
+  }
 }
 
-export const changeResultsSort = () => {
-    const newResultsSort = document.querySelector('.results-sort__link-active')
-    return {
-        type: ACTION_CHANGE_RESULTS_SORT,
-        payload: newResultsSort.value
-    }
+export const changeTypeOfResultsSorting = (data) => {
+  return {
+    type: CHANGE_TYPE_OF_RESULTS_SORTING,
+    payload: data
+  }
+}
+
+export const putFetchedArrayToStore = (data) => {
+  return {
+    type: PUT_FETCHED_ARRAY_TO_STORE,
+    payload: data
+  }
+}
+
+export const putOpenedFilmToStore = (data) => {
+  return {
+    type: PUT_OPENED_FILM_TO_STORE,
+    payload: data
+  }
+}
+
+export const putOpenedFilmsGenreToStore = (data) => {
+  return {
+    type: PUT_OPENED_FILMS_GENRE_TO_STORE,
+    payload: data
+  }
+}
+
+export const clearStore = () => {
+  return {
+    type: CLEAR_STORE
+  }
 }
