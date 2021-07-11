@@ -14,7 +14,7 @@ export const initialState = {
   resultsSort: 'vote_average',
   fetchedData: [],
   filmHasOpened: false,
-  openedFilm: {},
+  openedFilm: null,
   openedFilmsGenre: null
 }
 

@@ -1,16 +1,25 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { SearchInput } from '../../dumb/search-input'
 import { SearchHeadingFind } from '../../dumb/search-heading-find/search-heading-find'
 import { SearchSettings } from '../../dumb/search-settings'
-import { SearchHeadingNetflix } from '../../dumb/search-heading-netflix/search-heading-netflix'
+import { SearchHeadingNetflix } from '../../dumb/search-heading-netflix'
 import './search.scss'
 import PropTypes from 'prop-types'
+import { useLocation } from 'react-router'
 
 export const Search = (props) => {
-  const { resultsSort } = props
+  const { resultsSort, searchData } = props
   const [request, setRequest] = useState('')
   const [setting, setSetting] = useState('title')
+  const location = useLocation().search
 
+  useEffect(() => {
+    const params = new URLSearchParams(location)
+    const searchRequest = params.getAll('request')[0]
+    if (searchRequest && searchData === '') {
+      setRequest(searchRequest)
+    }
+  })
   return (
             <div className="search">
                 <SearchHeadingFind>

@@ -15,7 +15,7 @@ export const ResultsItem = (props) => {
           const fetchedFilm = await fetchFilm(id)
           dispatch(putOpenedFilmToStore(fetchedFilm))
           dispatch(putOpenedFilmsGenreToStore(fetchedFilm.genres[0]))
-          history.push(`/film/${fetchedFilm.id}`)
+          history.push(`/film/?id=${fetchedFilm.id}`)
           const newFetchedArray = await fetchData(fetchedFilm.genres[0], 'genres', active)
           dispatch(putFetchedArrayToStore(newFetchedArray.data))
         }}>

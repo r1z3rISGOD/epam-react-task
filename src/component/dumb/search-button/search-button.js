@@ -13,11 +13,13 @@ export const SearchButton = (props) => {
 
   return (
         <button onClick={async () => {
-          const response = await fetchData(request, setting, resultsSort)
-          dispatch(changeSearchRequestedData(request))
-          dispatch(changeTypeOfSearch(setting))
-          dispatch(putFetchedArrayToStore(response.data))
-          history.push(`/search/${request}&${setting}&${resultsSort}`)
+          if (request !== '') {
+            const response = await fetchData(request, setting, resultsSort)
+            dispatch(changeSearchRequestedData(request))
+            dispatch(changeTypeOfSearch(setting))
+            dispatch(putFetchedArrayToStore(response.data))
+            history.push(`/search/?request=${request}`)
+          }
         }} className="search-settings__button">SEARCH</button>
   )
 }

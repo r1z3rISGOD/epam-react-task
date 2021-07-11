@@ -19,9 +19,9 @@ export const SearchInput = (props) => {
                   dispatch(changeTypeOfSearch(setting))
                   const response = await fetchData(request, setting, resultsSort)
                   dispatch(putFetchedArrayToStore(response.data))
-                  history.push(`/search/${request}&${setting}&${resultsSort}`)
+                  history.push(`/search/?request=${request}`)
                 }}>
-            <input onChange={(e) => setRequest(e.target.value)} type="text" className="search__input"/>
+            <input value={request} onChange={(e) => setRequest(e.target.value)} type="text" className="search__input"/>
             </form>
   )
 }

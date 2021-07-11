@@ -2,12 +2,12 @@ import React, { useEffect } from 'react'
 import './app.scss'
 import './netflix-bg.jpg'
 import { Search } from '../smart/search'
-import { Film } from '../dumb/film/film'
+import { Film } from '../dumb/film'
 import { Results } from '../smart/results'
 import { Footer } from '../dumb/footer'
 import { useSelector } from 'react-redux'
-import { NotFound } from '../dumb/not-found/not-found'
-import { Redirect, Route, Switch, useHistory, BrowserRouter } from 'react-router-dom'
+import { NotFound } from '../dumb/not-found'
+import { Route, Switch, useHistory, BrowserRouter } from 'react-router-dom'
 
 export const App = () => {
   const history = useHistory()
@@ -22,7 +22,7 @@ export const App = () => {
 
   useEffect(() => {
     if (window.location.pathname.includes('/search/films')) {
-      history.push(`/search/${searchData}&${searchSetting}&${resultsSort}`)
+      history.push(`/search/?request=${searchData}`)
     }
   })
 
@@ -33,12 +33,11 @@ export const App = () => {
                     <Switch>
                         <Route exact path='/'
                                render={() => <Search resultsSort={resultsSort}/>}/>
-                        <Route path='/search/:request?&:type?&:filter?'
-                               render={(props) => <Search data={props} resultsSort={resultsSort}/>}/>
-                        <Route exact path='/film/:id'
+                        <Route path='/search/:request?'
+                               render={(props) => <Search searchData={searchData} data={props} resultsSort={resultsSort}/>}/>
+                        <Route exact path='/film/:id?'
                                render={(props) => <Film data={props} openedFilm={openedFilm}/>}/>
-                        <Route component={NotFound}/>
-                        <Redirect from='*' to='/'/>
+                        <Route path='*' component={NotFound}/>
                     </Switch>
                 </div>
                 <Results
