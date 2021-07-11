@@ -22,7 +22,7 @@ export const App = () => {
 
   useEffect(() => {
     if (window.location.pathname.includes('/search/films')) {
-      history.push(`/search/films/:${searchData}&:${searchSetting}&:${resultsSort}`)
+      history.push(`/search/${searchData}&${searchSetting}&${resultsSort}`)
     }
   })
 
@@ -33,9 +33,9 @@ export const App = () => {
                     <Switch>
                         <Route exact path='/'
                                render={() => <Search resultsSort={resultsSort}/>}/>
-                        <Route path='/search/films/:request&:type&:filter'
+                        <Route path='/search/:request?&:type?&:filter?'
                                render={(props) => <Search data={props} resultsSort={resultsSort}/>}/>
-                        <Route path='/films/:id'
+                        <Route exact path='/film/:id'
                                render={(props) => <Film data={props} openedFilm={openedFilm}/>}/>
                         <Route component={NotFound}/>
                         <Redirect from='*' to='/'/>

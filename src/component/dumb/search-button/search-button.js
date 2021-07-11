@@ -17,12 +17,13 @@ export const SearchButton = (props) => {
           dispatch(changeSearchRequestedData(request))
           dispatch(changeTypeOfSearch(setting))
           dispatch(putFetchedArrayToStore(response.data))
-          history.push(`/search/films/:${request}&:${setting}&:${resultsSort}`)
+          history.push(`/search/${request}&${setting}&${resultsSort}`)
         }} className="search-settings__button">SEARCH</button>
   )
 }
 
 SearchButton.propTypes = {
   request: PropTypes.string,
-  setting: PropTypes.string
+  setting: PropTypes.string,
+  resultsSort: PropTypes.string
 }

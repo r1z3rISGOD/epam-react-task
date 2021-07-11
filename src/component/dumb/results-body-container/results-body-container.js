@@ -3,6 +3,7 @@ import { ResultsBody } from '../results-body/results-body'
 import './results-body-container.scss'
 import { ResultsItem } from '../results-item/results-item'
 import { Switch, Route } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 export const ResultsBodyContainer = (props) => {
   const { fetchedData, active } = props
@@ -28,7 +29,7 @@ export const ResultsBodyContainer = (props) => {
                     </ResultsBody>
                 </div>
             }/>
-            <Route path='/films/:id?' render={() =>
+            <Route path='/film/:id?' render={() =>
             <div className="results-body-container">
                 <ResultsBody>
                     <div className="results-body__films">
@@ -57,4 +58,9 @@ export const ResultsBodyContainer = (props) => {
             }/>
         </Switch>
   )
+}
+
+ResultsBodyContainer.propTypes = {
+  fetchedData: PropTypes.array,
+  active: PropTypes.string
 }

@@ -36,5 +36,8 @@ export const Results = (props) => {
 Results.propTypes = {
   resultsCount: PropTypes.number,
   isOpened: PropTypes.bool,
-  fetchedData: PropTypes.array
+  fetchedData: PropTypes.array,
+  searchData: PropTypes.string,
+  searchSetting: PropTypes.string,
+  openedFilmsGenre: PropTypes.string
 }

@@ -27,5 +27,6 @@ SearchSettings.propTypes = {
   setting: PropTypes.string,
   setSetting: PropTypes.func,
   active: PropTypes.string,
-  setActive: PropTypes.func
+  setActive: PropTypes.func,
+  resultsSort: PropTypes.string
 }

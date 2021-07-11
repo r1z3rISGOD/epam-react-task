@@ -4,10 +4,10 @@ import { SearchHeadingFind } from '../../dumb/search-heading-find/search-heading
 import { SearchSettings } from '../../dumb/search-settings'
 import { SearchHeadingNetflix } from '../../dumb/search-heading-netflix/search-heading-netflix'
 import './search.scss'
+import PropTypes from 'prop-types'
 
 export const Search = (props) => {
-  const { resultsSort, data } = props
-    console.log(data)
+  const { resultsSort } = props
   const [request, setRequest] = useState('')
   const [setting, setSetting] = useState('title')
 
@@ -30,4 +30,8 @@ export const Search = (props) => {
                 />
             </div>
   )
+}
+
+Search.propTypes = {
+  resultsSort: PropTypes.string
 }

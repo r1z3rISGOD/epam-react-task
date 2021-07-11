@@ -15,7 +15,7 @@ export const ResultsItem = (props) => {
           const fetchedFilm = await fetchFilm(id)
           dispatch(putOpenedFilmToStore(fetchedFilm))
           dispatch(putOpenedFilmsGenreToStore(fetchedFilm.genres[0]))
-          history.push(`/films/${fetchedFilm.id}`)
+          history.push(`/film/${fetchedFilm.id}`)
           const newFetchedArray = await fetchData(fetchedFilm.genres[0], 'genres', active)
           dispatch(putFetchedArrayToStore(newFetchedArray.data))
         }}>
@@ -36,5 +36,6 @@ ResultsItem.propTypes = {
   genres: PropTypes.array,
   year: PropTypes.string,
   id: PropTypes.number,
-  picture: PropTypes.string
+  picture: PropTypes.string,
+  active: PropTypes.string
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import './search-heading-neflix.scss'
+import PropTypes from 'prop-types'
 
 export const SearchHeadingNetflix = (props) => {
   return (
@@ -8,4 +9,8 @@ export const SearchHeadingNetflix = (props) => {
           {props.children}
       </div>
   )
+}
+
+SearchHeadingNetflix.propTypes = {
+  children: PropTypes.any
 }

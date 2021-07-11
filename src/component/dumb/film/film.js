@@ -4,6 +4,7 @@ import './film.scss'
 import { useHistory } from 'react-router-dom'
 import { clearStore } from '../../../store/actions'
 import { useDispatch } from 'react-redux'
+import PropTypes from 'prop-types'
 
 export const Film = (props) => {
   console.log(props)
@@ -36,4 +37,8 @@ export const Film = (props) => {
             </div>
         </div>
   )
+}
+
+Film.propTypes = {
+  openedFilm: PropTypes.object
 }

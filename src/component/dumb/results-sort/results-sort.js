@@ -16,7 +16,7 @@ export const ResultsSort = (props) => {
                     <button value="release_date" className="results-sort__link results-sort__link-active">release date</button>
                     <button onClick={ async () => {
                       await setActive('vote_average')
-                      dispatch(await changeTypeOfResultsSorting('vote_average'))
+                      dispatch(changeTypeOfResultsSorting('vote_average'))
                       const response = await fetchData(searchData, searchSetting, 'vote_average')
                       dispatch(putFetchedArrayToStore(response.data))
                     }}
@@ -31,7 +31,7 @@ export const ResultsSort = (props) => {
                     <span className="results-sort__text">Sort by</span>
                     <button onClick={async () => {
                       await setActive('release_date')
-                      dispatch(await changeTypeOfResultsSorting('release_date'))
+                      dispatch(changeTypeOfResultsSorting('release_date'))
                       const response = await fetchData(searchData, searchSetting, 'release_date')
                       dispatch(putFetchedArrayToStore(response.data))
                     }}
