@@ -1,46 +1,22 @@
-import React, { useEffect, useState } from 'react'
-import { SearchInput } from '../../dumb/search-input'
-import { SearchHeadingFind } from '../../dumb/search-heading-find/search-heading-find'
-import { SearchSettings } from '../../dumb/search-settings'
-import { SearchHeadingNetflix } from '../../dumb/search-heading-netflix'
-import './search.scss'
-import PropTypes from 'prop-types'
-import { useLocation } from 'react-router'
-
-export const Search = (props) => {
-  const { resultsSort, searchData } = props
-  const [request, setRequest] = useState('')
-  const [setting, setSetting] = useState('title')
-  const location = useLocation().search
-
-  useEffect(() => {
-    const params = new URLSearchParams(location)
-    const searchRequest = params.getAll('request')[0]
-    if (searchRequest && searchData === '') {
-      setRequest(searchRequest)
-    }
-  })
-  return (
-            <div className="search">
-                <SearchHeadingFind>
-                    <SearchHeadingNetflix/>
-                </SearchHeadingFind>
-                <SearchInput
-                    setRequest={setRequest}
-                    request={request}
-                    setting={setting}
-                    resultsSort={resultsSort}
-                />
-                <SearchSettings
-                    resultsSort={resultsSort}
-                    request={request}
-                    setSetting={setSetting}
-                    setting={setting}
-                />
-            </div>
-  )
-}
-
-Search.propTypes = {
-  resultsSort: PropTypes.string
-}
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Search = void 0;
+var React = require("react");
+var react_1 = require("react");
+var search_input_1 = require("../../dumb/search-input");
+var search_heading_find_1 = require("../../dumb/search-heading-find/search-heading-find");
+var search_settings_1 = require("../../dumb/search-settings");
+var search_heading_netflix_1 = require("../../dumb/search-heading-netflix");
+require("./search.scss");
+var Search = function (_a) {
+    var resultsSort = _a.resultsSort;
+    var _b = react_1.useState(''), request = _b[0], setRequest = _b[1];
+    var _c = react_1.useState('title'), setting = _c[0], setSetting = _c[1];
+    return (React.createElement("div", { className: "search" },
+        React.createElement(search_heading_find_1.SearchHeadingFind, null,
+            React.createElement(search_heading_netflix_1.SearchHeadingNetflix, null)),
+        React.createElement(search_input_1.SearchInput, { setRequest: setRequest, request: request, setting: setting, resultsSort: resultsSort }),
+        React.createElement(search_settings_1.SearchSettings, { resultsSort: resultsSort, request: request, setSetting: setSetting, setting: setting })));
+};
+exports.Search = Search;
+//# sourceMappingURL=search.js.map

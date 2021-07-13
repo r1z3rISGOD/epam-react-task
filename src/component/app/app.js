@@ -1,54 +1,41 @@
-import React, { useEffect } from 'react'
-import './app.scss'
-import './netflix-bg.jpg'
-import { Search } from '../smart/search'
-import { Film } from '../dumb/film'
-import { Results } from '../smart/results'
-import { Footer } from '../dumb/footer'
-import { useSelector } from 'react-redux'
-import { NotFound } from '../dumb/not-found'
-import { Route, Switch, useHistory, BrowserRouter } from 'react-router-dom'
-
-export const App = () => {
-  const history = useHistory()
-  const state = useSelector(state => state)
-  const hasOpened = state.filmHasOpened
-  const fetchedData = state.fetchedData
-  const resultsSort = state.resultsSort
-  const searchSetting = state.searchSetting
-  const searchData = state.searchData
-  const openedFilm = state.openedFilm
-  const openedFilmsGenre = state.openedFilmsGenre
-
-  useEffect(() => {
-    if (window.location.pathname.includes('/search/films')) {
-      history.push(`/search/?request=${searchData}`)
-    }
-  })
-
-  return (
-      <BrowserRouter>
-            <div className="app-wrapper">
-                <div className="app-header">
-                    <Switch>
-                        <Route exact path='/'
-                               render={() => <Search resultsSort={resultsSort}/>}/>
-                        <Route path='/search/:request?'
-                               render={(props) => <Search searchData={searchData} data={props} resultsSort={resultsSort}/>}/>
-                        <Route exact path='/film/:id?'
-                               render={(props) => <Film data={props} openedFilm={openedFilm}/>}/>
-                        <Route path='*' component={NotFound}/>
-                    </Switch>
-                </div>
-                <Results
-                    openedFilmsGenre={openedFilmsGenre}
-                    isOpened={hasOpened}
-                    fetchedData={fetchedData}
-                    searchData={searchData}
-                    searchSetting={searchSetting}
-                />
-                <Footer/>
-            </div>
-      </BrowserRouter>
-  )
-}
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.App = void 0;
+var React = require("react");
+var react_1 = require("react");
+var react_router_dom_1 = require("react-router-dom");
+require("./app.scss");
+require("./netflix-bg.jpg");
+var search_1 = require("../smart/search");
+var film_1 = require("../dumb/film");
+var results_1 = require("../smart/results");
+var footer_1 = require("../dumb/footer");
+var react_redux_1 = require("react-redux");
+var not_found_1 = require("../dumb/not-found");
+var App = function () {
+    var history = react_router_dom_1.useHistory();
+    var hasOpened = react_redux_1.useSelector(function (state) { return state.filmHasOpened; });
+    var fetchedData = react_redux_1.useSelector(function (state) { return state.fetchedData; });
+    var resultsSort = react_redux_1.useSelector(function (state) { return state.resultsSort; });
+    var searchSetting = react_redux_1.useSelector(function (state) { return state.searchSetting; });
+    var searchData = react_redux_1.useSelector(function (state) { return state.searchData; });
+    var openedFilm = react_redux_1.useSelector(function (state) { return state.openedFilm; });
+    var openedFilmsGenre = react_redux_1.useSelector(function (state) { return state.openedFilmsGenre; });
+    react_1.useEffect(function () {
+        if (window.location.pathname.includes('/search/films')) {
+            history.push("/search/?request=" + searchData);
+        }
+    });
+    return (React.createElement(react_router_dom_1.BrowserRouter, null,
+        React.createElement("div", { className: "app-wrapper" },
+            React.createElement("div", { className: "app-header" },
+                React.createElement(react_router_dom_1.Switch, null,
+                    React.createElement(react_router_dom_1.Route, { exact: true, path: '/', render: function () { return React.createElement(search_1.Search, { resultsSort: resultsSort }); } }),
+                    React.createElement(react_router_dom_1.Route, { path: '/search/:request?', render: function (props) { return React.createElement(search_1.Search, { data: props, resultsSort: resultsSort }); } }),
+                    React.createElement(react_router_dom_1.Route, { exact: true, path: '/film/:id?', render: function (props) { return React.createElement(film_1.Film, { data: props, openedFilm: openedFilm }); } }),
+                    React.createElement(react_router_dom_1.Route, { path: '*', component: not_found_1.NotFound }))),
+            React.createElement(results_1.Results, { openedFilmsGenre: openedFilmsGenre, hasOpened: hasOpened, fetchedData: fetchedData, searchData: searchData, searchSetting: searchSetting }),
+            React.createElement(footer_1.Footer, null))));
+};
+exports.App = App;
+//# sourceMappingURL=app.js.map

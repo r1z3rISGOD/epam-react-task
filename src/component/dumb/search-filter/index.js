@@ -1,2 +1,2 @@
-import {SearchFilter} from "./search-filter"
-export {SearchFilter}
+import { SearchFilter } from './search-filter'
+export { SearchFilter }

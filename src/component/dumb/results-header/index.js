@@ -1,2 +1,2 @@
-import {ResultsHeader} from "./results-header.js"
-export {ResultsHeader}
+import { ResultsHeader } from './results-header'
+export { ResultsHeader }

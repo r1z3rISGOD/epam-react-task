@@ -1,26 +1,19 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-
-export const FilmBody = (props) => {
-  const { film } = props
-  return (
-        <div className='film-body'>
-            <img className='film-body__img' src={film.poster_path} alt={props.title}/>
-            <div className='film-data'>
-                <div className='film-data__title-rating'>
-                    <span className='film-data__title'>{film.title}</span>
-                    <span className='film-data__rating'>{film.vote_average}</span>
-                </div>
-                <div className='film-data__date-runtime'>
-                    <span className='film-data__date'>{film.release_date.substr(0, 4)}</span>
-                    <span className='film-data__time'>{`${film.runtime} min`}</span>
-                </div>
-                <span className='film-data__overview'>{film.overview}</span>
-            </div>
-        </div>
-  )
-}
-
-FilmBody.propTypes = {
-  openedFilm: PropTypes.object
-}
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FilmBody = void 0;
+var React = require("react");
+var FilmBody = function (_a) {
+    var openedFilm = _a.openedFilm;
+    return (React.createElement("div", { className: 'film-body' },
+        React.createElement("img", { className: 'film-body__img', src: openedFilm["poster_path"], alt: openedFilm["title"] }),
+        React.createElement("div", { className: 'film-data' },
+            React.createElement("div", { className: 'film-data__title-rating' },
+                React.createElement("span", { className: 'film-data__title' }, openedFilm["title"]),
+                React.createElement("span", { className: 'film-data__rating' }, openedFilm["vote_average"])),
+            React.createElement("div", { className: 'film-data__date-runtime' },
+                React.createElement("span", { className: 'film-data__date' }, openedFilm["release_date"].substr(0, 4)),
+                React.createElement("span", { className: 'film-data__time' }, (openedFilm["runtime"]) + " min")),
+            React.createElement("span", { className: 'film-data__overview' }, openedFilm["overview"]))));
+};
+exports.FilmBody = FilmBody;
+//# sourceMappingURL=film-body.js.map
