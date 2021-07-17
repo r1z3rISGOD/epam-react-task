@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`search filter tests search filter test 1 1`] = `
+<div
+  className="search-filter"
+>
+  <span
+    className="search-filter__text"
+  >
+    SEARCH BY
+  </span>
+  <button
+    className="search-filter__button search-filter__button-active"
+  >
+    TITLE
+  </button>
+  <button
+    className="search-filter__button btn"
+    onClick={[Function]}
+    value="genres"
+  >
+    GENRE
+  </button>
+</div>
+`;
+
+exports[`search filter tests search filter test 2 1`] = `
+<div
+  className="search-filter"
+>
+  <span
+    className="search-filter__text"
+  >
+    SEARCH BY
+  </span>
+  <button
+    className="search-filter__button btn"
+    onClick={[Function]}
+    value="title"
+  >
+    TITLE
+  </button>
+  <button
+    className="search-filter__button search-filter__button-active"
+  >
+    GENRE
+  </button>
+</div>
+`;

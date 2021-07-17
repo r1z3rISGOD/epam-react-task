@@ -1,14 +1,20 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
-import { SearchHeadingNetflix } from '../search-heading-netflix'
+import { SearchHeadingNetflix } from '../../dumb/search-heading-netflix'
 import './film.scss'
-import { FilmButton } from '../film-button'
-import { FilmBody } from '../film-body'
+import { FilmButton } from '../../dumb/film-button'
+import { FilmBody } from '../../dumb/film-body'
 import { useDispatch } from 'react-redux'
 import { fetchData, fetchFilm } from '../../services/fetchService'
 import { useParams } from 'react-router'
-import { putFetchedArrayToStore, putOpenedFilmsGenreToStore, putOpenedFilmToStore } from '../../../store/actions'
-import { Loader } from '../loader'
+import {
+  clearStore,
+  putFetchedArrayToStore,
+  putOpenedFilmsGenreToStore,
+  putOpenedFilmToStore
+} from '../../../store/actions'
+import { Loader } from '../../dumb/loader'
+import { useHistory } from 'react-router-dom'
 
 interface FilmProps {
     openedFilm: any[]
@@ -18,6 +24,7 @@ export const Film : React.FC<FilmProps> = ({ openedFilm }) => {
   const [load, setLoad] = useState<boolean>(openedFilm === undefined)
   const dispatch = useDispatch()
   const location = useParams()
+  const history = useHistory()
 
   async function fetching () : Promise<void> {
     const fetchedFilm = await fetchFilm(location['id'])
@@ -34,11 +41,17 @@ export const Film : React.FC<FilmProps> = ({ openedFilm }) => {
     }
   })
 
+  const onClick = () => {
+    history.push('/')
+    dispatch(clearStore())
+    console.clear()
+  }
+
   const content = load
     ? <Loader/>
     : <div className='film'>
                 <SearchHeadingNetflix>
-                    <FilmButton/>
+                    <FilmButton onClick={onClick}/>
                 </SearchHeadingNetflix>
                 <FilmBody
                     openedFilm={openedFilm}

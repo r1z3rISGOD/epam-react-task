@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`search settings 1`] = `
+<div
+  className="search-settings"
+>
+  <SearchFilter />
+  <SearchButton />
+</div>
+`;

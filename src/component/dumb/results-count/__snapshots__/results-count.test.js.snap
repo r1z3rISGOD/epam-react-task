@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`results count tests results count test 1 1`] = `
+<span
+  className="results-count"
+>
+  5
+   movies found
+</span>
+`;
+
+exports[`results count tests results count test 2 1`] = `<Fragment />`;

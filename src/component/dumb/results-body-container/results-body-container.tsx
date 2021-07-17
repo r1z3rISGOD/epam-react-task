@@ -3,34 +3,20 @@ import { useEffect } from 'react'
 import { ResultsBody } from '../results-body'
 import './results-body-container.scss'
 import { ResultsItem } from '../results-item'
-import { fetchData } from '../../services/fetchService'
-import { useLocation } from 'react-router'
-import { useDispatch } from 'react-redux'
-import { changeSearchRequestedData, putFetchedArrayToStore } from '../../../store/actions'
+import * as PropTypes from 'prop-types'
+import { InferProps } from 'prop-types'
 
-interface ResultsBodyContainerProps {
-    fetchedData: any[]
-    active: string
-    searchSetting: string
+const resultsBodyContainerProps = {
+  fetchedData: PropTypes.array,
+  active: PropTypes.string,
+  searchSetting: PropTypes.string,
+  fetchingAllFilms: PropTypes.func,
+  fetchingFilm: PropTypes.func
 }
 
-export const ResultsBodyContainer : React.FC<ResultsBodyContainerProps> = ({ fetchedData, active, searchSetting }) => {
-  const dispatch = useDispatch()
-  const location = useLocation().search
-
+export const ResultsBodyContainer : React.FC<InferProps<typeof resultsBodyContainerProps>> = ({ fetchedData, active, searchSetting, fetchingAllFilms, fetchingFilm }) => {
   useEffect(() => {
-    const fetching = async () => {
-      const params = new URLSearchParams(location)
-      const searchRequest = params.getAll('request')[0]
-      if (fetchedData.length === 0 && searchRequest) {
-        const newFetchedFilms = await fetchData(searchRequest, searchSetting, active)
-        if (newFetchedFilms.data.length > 0) {
-          dispatch(putFetchedArrayToStore(newFetchedFilms.data))
-          dispatch(changeSearchRequestedData(searchRequest))
-        }
-      }
-    }
-    fetching()
+    fetchingAllFilms(fetchedData, searchSetting, active)
   })
 
   if (fetchedData.length === 0) {
@@ -57,6 +43,7 @@ export const ResultsBodyContainer : React.FC<ResultsBodyContainerProps> = ({ fet
                                 picture={film.poster_path}
                                 genres={film.genres}
                                 id={film.id}
+                                fetchingFilm={fetchingFilm}
                             />
                         )}
                     </div>

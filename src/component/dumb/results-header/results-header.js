@@ -9,21 +9,20 @@ var results_sort_1 = require("../results-sort");
 var results_data_1 = require("../results-data");
 var results_related_1 = require("../results-related");
 var ResultsHeader = function (_a) {
-    var resultsCount = _a.resultsCount, hasOpened = _a.hasOpened, active = _a.active, setActive = _a.setActive, searchData = _a.searchData, searchSetting = _a.searchSetting, openedFilmsGenre = _a.openedFilmsGenre;
-    if (resultsCount > 0 && !hasOpened) {
-        return (React.createElement("div", { className: "results-header" },
-            React.createElement(results_data_1.ResultsData, null,
-                React.createElement(error_boundary_1.ErrorBoundary, null,
-                    React.createElement(results_count_1.ResultsCount, { resultsCount: resultsCount })),
-                React.createElement(results_sort_1.ResultsSort, { active: active, setActive: setActive, resultsCount: resultsCount, searchData: searchData, searchSetting: searchSetting }))));
-    }
-    else if (hasOpened) {
-        return (React.createElement("div", { className: "results-header" },
-            React.createElement(results_data_1.ResultsData, null,
-                React.createElement(results_related_1.ResultsRelated, { openedFilmsGenre: openedFilmsGenre }))));
-    }
-    else {
-        return (React.createElement("div", { className: "results-header" }));
+    var resultsCount = _a.resultsCount, searchData = _a.searchData, searchSetting = _a.searchSetting, openedFilmsGenre = _a.openedFilmsGenre, headerType = _a.headerType, sortingResults = _a.sortingResults, sortVision = _a.sortVision;
+    switch (headerType) {
+        case 1:
+            return (React.createElement("div", { className: "results-header" },
+                React.createElement(results_data_1.ResultsData, null,
+                    React.createElement(error_boundary_1.ErrorBoundary, { ok: true },
+                        React.createElement(results_count_1.ResultsCount, { resultsCount: resultsCount })),
+                    React.createElement(results_sort_1.ResultsSort, { searchData: searchData, searchSetting: searchSetting, sortingResults: sortingResults, sortVision: sortVision }))));
+        case 2:
+            return (React.createElement("div", { className: "results-header" },
+                React.createElement(results_data_1.ResultsData, null,
+                    React.createElement(results_related_1.ResultsRelated, { openedFilmsGenre: openedFilmsGenre }))));
+        default:
+            return (React.createElement("div", { className: "results-header" }));
     }
 };
 exports.ResultsHeader = ResultsHeader;

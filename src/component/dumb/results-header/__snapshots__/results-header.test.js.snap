@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`results header tests results header test 1 1`] = `
+<div
+  className="results-header"
+>
+  <ResultsData>
+    <ErrorBoundary
+      ok={true}
+    >
+      <ResultsCount
+        resultsCount={10}
+      />
+    </ErrorBoundary>
+    <ResultsSort
+      searchData="avenger"
+      searchSetting="title"
+      sortVision={[Function]}
+      sortingResults={[Function]}
+    />
+  </ResultsData>
+</div>
+`;
+
+exports[`results header tests results header test 2 1`] = `
+<div
+  className="results-header"
+>
+  <ResultsData>
+    <ResultsRelated
+      openedFilmsGenre="drama"
+    />
+  </ResultsData>
+</div>
+`;
+
+exports[`results header tests results header test 3 1`] = `
+<div
+  className="results-header"
+/>
+`;

@@ -39,20 +39,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Film = void 0;
 var React = require("react");
 var react_1 = require("react");
-var search_heading_netflix_1 = require("../search-heading-netflix");
+var search_heading_netflix_1 = require("../../dumb/search-heading-netflix");
 require("./film.scss");
-var film_button_1 = require("../film-button");
-var film_body_1 = require("../film-body");
+var film_button_1 = require("../../dumb/film-button");
+var film_body_1 = require("../../dumb/film-body");
 var react_redux_1 = require("react-redux");
 var fetchService_1 = require("../../services/fetchService");
 var react_router_1 = require("react-router");
 var actions_1 = require("../../../store/actions");
-var loader_1 = require("../loader");
+var loader_1 = require("../../dumb/loader");
+var react_router_dom_1 = require("react-router-dom");
 var Film = function (_a) {
     var openedFilm = _a.openedFilm;
     var _b = react_1.useState(openedFilm === undefined), load = _b[0], setLoad = _b[1];
     var dispatch = react_redux_1.useDispatch();
     var location = react_router_1.useParams();
+    var history = react_router_dom_1.useHistory();
     function fetching() {
         return __awaiter(this, void 0, void 0, function () {
             var fetchedFilm, newFetchedArray;
@@ -78,11 +80,16 @@ var Film = function (_a) {
             fetching();
         }
     });
+    var onClick = function () {
+        history.push('/');
+        dispatch(actions_1.clearStore());
+        console.clear();
+    };
     var content = load
         ? React.createElement(loader_1.Loader, null)
         : React.createElement("div", { className: 'film' },
             React.createElement(search_heading_netflix_1.SearchHeadingNetflix, null,
-                React.createElement(film_button_1.FilmButton, null)),
+                React.createElement(film_button_1.FilmButton, { onClick: onClick })),
             React.createElement(film_body_1.FilmBody, { openedFilm: openedFilm }));
     return (React.createElement("div", null, content));
 };

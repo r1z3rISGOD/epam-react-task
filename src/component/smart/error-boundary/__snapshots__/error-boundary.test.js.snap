@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`error boundary tests error boundary test 1 1`] = `
+<Fragment>
+  <div>
+    Hello
+  </div>
+</Fragment>
+`;
+
+exports[`error boundary tests error boundary test 2 1`] = `
+<Fragment>
+  <OopsText />
+</Fragment>
+`;

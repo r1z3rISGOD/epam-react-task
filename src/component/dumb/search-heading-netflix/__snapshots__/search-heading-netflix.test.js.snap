@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`search heading netflix 1`] = `
+<div
+  className="film-heading"
+>
+  <h2
+    className="search__heading-1"
+  >
+    netflixroulette
+  </h2>
+</div>
+`;
