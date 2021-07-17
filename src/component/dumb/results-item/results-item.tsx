@@ -1,9 +1,5 @@
 import * as React from 'react'
 import './results-item.scss'
-import { putOpenedFilmToStore, putOpenedFilmsGenreToStore, putFetchedArrayToStore } from '../../../store/actions'
-import { useDispatch } from 'react-redux'
-import { useHistory } from 'react-router-dom'
-import { fetchData, fetchFilm } from '../../services/fetchService'
 
 interface ResultsItemProps {
     title: string,
@@ -11,7 +7,8 @@ interface ResultsItemProps {
     year: string,
     picture: string,
     id: number,
-    active : string
+    active : string,
+    fetchingFilm: any
 }
 
 export const ResultsItem : React.FC<ResultsItemProps> = ({
@@ -20,24 +17,11 @@ export const ResultsItem : React.FC<ResultsItemProps> = ({
   year,
   picture,
   id,
-  active
+  active,
+  fetchingFilm
 }) => {
-  const history = useHistory()
-  const dispatch = useDispatch()
-
-  const fetching = async () => {
-    const fetchedFilm = await fetchFilm(id)
-    dispatch(putOpenedFilmToStore(fetchedFilm))
-    dispatch(putOpenedFilmsGenreToStore(fetchedFilm.genres[0]))
-    history.push(`/film/${fetchedFilm.id}`)
-    const newFetchedArray = await fetchData(fetchedFilm.genres[0], 'genres', active)
-    dispatch(putFetchedArrayToStore(newFetchedArray.data))
-  }
-
   return (
-        <div className="item" onClick={async () : Promise<void> => {
-          await fetching()
-        }}>
+        <div className="item" onClick={() => fetchingFilm(id, active)}>
             <img className="item__img" src={picture} alt={title}/>
             <div className="item-data">
                 <div className='item-data__text'>

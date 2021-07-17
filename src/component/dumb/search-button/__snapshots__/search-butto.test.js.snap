@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`search button tests search button test 1 1`] = `
+<button
+  className="search-settings__button"
+  onClick={[Function]}
+>
+  SEARCH
+</button>
+`;
+
+exports[`search button tests search button test 2 1`] = `
+<button
+  className="search-settings__button"
+  onClick={[Function]}
+>
+  SEARCH
+</button>
+`;

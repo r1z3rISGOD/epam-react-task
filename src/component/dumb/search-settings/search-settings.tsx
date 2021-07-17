@@ -8,9 +8,10 @@ interface SearchSettingsProps {
     setting: string
     setSetting: any
     resultsSort: string
+    fetchingAllFilms: any
 }
 
-export const SearchSettings : React.FC<SearchSettingsProps> = ({ request, setting, setSetting, resultsSort }) => {
+export const SearchSettings : React.FC<SearchSettingsProps> = ({ request, setting, setSetting, resultsSort, fetchingAllFilms}) => {
   return (
         <div className="search-settings">
             <SearchFilter
@@ -21,6 +22,7 @@ export const SearchSettings : React.FC<SearchSettingsProps> = ({ request, settin
                 resultsSort={resultsSort}
                 request={request}
                 setting={setting}
+                fetchingAllFilms={fetchingAllFilms}
             />
         </div>
   )

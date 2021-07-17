@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`results-body-container tests results body container test 1 1`] = `
+<div
+  className="results-body-container"
+>
+  <ResultsBody>
+    <div
+      className="results-body__no-films"
+    >
+      <span
+        className="results-body__text"
+      >
+         No films found 
+      </span>
+    </div>
+  </ResultsBody>
+</div>
+`;
+
+exports[`results-body-container tests results body container test 2 1`] = `
+<div
+  className="results-body-container"
+>
+  <ResultsBody>
+    <div
+      className="results-body__films"
+    >
+      <ResultsItem
+        active="vote_average"
+        genres={
+          Array [
+            "Mystery",
+            "Thriller",
+          ]
+        }
+        id={412302}
+        key="412302"
+        picture="https://image.tmdb.org/t/p/w500/oIltQs7MPk7VQFG3DJfgC63mShU.jpg"
+        title="Gemini"
+        year="2018-03-30"
+      />
+    </div>
+  </ResultsBody>
+</div>
+`;

@@ -2,7 +2,7 @@ import * as React from 'react'
 import './search-heading-find.scss'
 
 interface SearchHeadingFindProps {
-    children: React.ReactNode
+    children?: React.ReactNode
 }
 
 export const SearchHeadingFind : React.FC<SearchHeadingFindProps> = ({ children }) => {

@@ -12,9 +12,9 @@ export const ResultsCount : React.FC<ResultsCountProps> = ({ resultsCount }) => 
             {resultsCount} movies found
         </span>
     )
-  } else {
-    return (
-            <></>
-    )
   }
+
+  return (
+            <></>
+  )
 }

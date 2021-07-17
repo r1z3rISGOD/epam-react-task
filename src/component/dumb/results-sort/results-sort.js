@@ -39,56 +39,31 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ResultsSort = void 0;
 var React = require("react");
 require("./results-sort.scss");
-var actions_1 = require("../../../store/actions");
-var react_redux_1 = require("react-redux");
-var fetchService_1 = require("../../services/fetchService");
 var ResultsSort = function (_a) {
-    var active = _a.active, setActive = _a.setActive, resultsCount = _a.resultsCount, searchSetting = _a.searchSetting, searchData = _a.searchData;
-    var dispatch = react_redux_1.useDispatch();
-    if (resultsCount > 0) {
-        if (active === 'release_date') {
+    var searchSetting = _a.searchSetting, searchData = _a.searchData, sortingResults = _a.sortingResults, sortVision = _a.sortVision;
+    switch (sortVision) {
+        case 1:
             return (React.createElement("div", { className: "results-sort" },
                 React.createElement("span", { className: "results-sort__text" }, "Sort by"),
                 React.createElement("button", { value: "release_date", className: "results-sort__link results-sort__link-active" }, "release date"),
-                React.createElement("button", { onClick: function () { return __awaiter(void 0, void 0, void 0, function () {
-                        var response;
-                        return __generator(this, function (_a) {
-                            switch (_a.label) {
-                                case 0:
-                                    setActive('vote_average');
-                                    dispatch(actions_1.changeTypeOfResultsSorting('vote_average'));
-                                    return [4 /*yield*/, fetchService_1.fetchData(searchData, searchSetting, 'vote_average')];
-                                case 1:
-                                    response = _a.sent();
-                                    dispatch(actions_1.putFetchedArrayToStore(response.data));
-                                    return [2 /*return*/];
-                            }
-                        });
-                    }); }, value: "vote_average", className: "results-sort__link" }, "rating")));
-        }
-        if (active === 'vote_average') {
+                React.createElement("button", { onClick: function () { return __awaiter(void 0, void 0, void 0, function () { return __generator(this, function (_a) {
+                        switch (_a.label) {
+                            case 0: return [4 /*yield*/, sortingResults('vote-average', searchSetting, searchData)];
+                            case 1: return [2 /*return*/, _a.sent()];
+                        }
+                    }); }); }, value: "vote_average", className: "results-sort__link btn" }, "rating")));
+        case 2:
             return (React.createElement("div", { className: "results-sort" },
                 React.createElement("span", { className: "results-sort__text" }, "Sort by"),
-                React.createElement("button", { onClick: function () { return __awaiter(void 0, void 0, void 0, function () {
-                        var response;
-                        return __generator(this, function (_a) {
-                            switch (_a.label) {
-                                case 0:
-                                    setActive('release_date');
-                                    dispatch(actions_1.changeTypeOfResultsSorting('release_date'));
-                                    return [4 /*yield*/, fetchService_1.fetchData(searchData, searchSetting, 'release_date')];
-                                case 1:
-                                    response = _a.sent();
-                                    dispatch(actions_1.putFetchedArrayToStore(response.data));
-                                    return [2 /*return*/];
-                            }
-                        });
-                    }); }, value: "release_date", className: "results-sort__link" }, "release date"),
+                React.createElement("button", { onClick: function () { return __awaiter(void 0, void 0, void 0, function () { return __generator(this, function (_a) {
+                        switch (_a.label) {
+                            case 0: return [4 /*yield*/, sortingResults('release_date', searchSetting, searchData)];
+                            case 1: return [2 /*return*/, _a.sent()];
+                        }
+                    }); }); }, value: "release_date", className: "results-sort__link btn" }, "release date"),
                 React.createElement("button", { value: "vote_average", className: "results-sort__link results-sort__link-active" }, "rating")));
-        }
-    }
-    else {
-        return (React.createElement(React.Fragment, null));
+        default:
+            return (React.createElement(React.Fragment, null));
     }
 };
 exports.ResultsSort = ResultsSort;

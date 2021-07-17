@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`results sort test results sort test 1 1`] = `
+<div
+  className="results-sort"
+>
+  <span
+    className="results-sort__text"
+  >
+    Sort by
+  </span>
+  <button
+    className="results-sort__link results-sort__link-active"
+    value="release_date"
+  >
+    release date
+  </button>
+  <button
+    className="results-sort__link btn"
+    onClick={[Function]}
+    value="vote_average"
+  >
+    rating
+  </button>
+</div>
+`;
+
+exports[`results sort test results sort test 2 1`] = `
+<div
+  className="results-sort"
+>
+  <span
+    className="results-sort__text"
+  >
+    Sort by
+  </span>
+  <button
+    className="results-sort__link btn"
+    onClick={[Function]}
+    value="release_date"
+  >
+    release date
+  </button>
+  <button
+    className="results-sort__link results-sort__link-active"
+    value="vote_average"
+  >
+    rating
+  </button>
+</div>
+`;
+
+exports[`results sort test results sort test 3 1`] = `<Fragment />`;

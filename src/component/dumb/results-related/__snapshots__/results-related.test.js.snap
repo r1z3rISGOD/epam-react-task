@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`results related 1`] = `
+<span
+  className="results-related"
+>
+  Films by 
+   genre
+</span>
+`;

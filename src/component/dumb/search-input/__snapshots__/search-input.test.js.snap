@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`search input 1 1`] = `
+<form
+  className="search__form"
+  onSubmit={[Function]}
+>
+  <input
+    className="search__input"
+    onChange={[Function]}
+    type="text"
+  />
+</form>
+`;
+
+exports[`search input 2 1`] = `
+<form
+  className="search__form"
+  onSubmit={[Function]}
+>
+  <input
+    className="search__input"
+    onChange={[Function]}
+    type="text"
+  />
+</form>
+`;

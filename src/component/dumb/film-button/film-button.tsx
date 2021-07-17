@@ -1,7 +1,4 @@
 import * as React from 'react'
-import { useDispatch } from 'react-redux'
-import { useHistory } from 'react-router-dom'
-import { clearStore } from '../../../store/actions'
 import styled from 'styled-components'
 
 const Button = styled.button`
@@ -12,14 +9,12 @@ const Button = styled.button`
   color: #e55f64;
   font-weight: bold;`
 
-export const FilmButton : React.FC = () => {
-  const dispatch = useDispatch()
-  const history = useHistory()
+interface FilmButtonProps {
+    onClick: any
+}
+
+export const FilmButton : React.FC<FilmButtonProps> = ({ onClick }) => {
   return (
-        <Button onClick={() => {
-          history.push('/')
-          dispatch(clearStore())
-          console.clear()
-        }}>SEARCH</Button>
+        <Button className='btn' onClick={() => onClick()}>SEARCH</Button>
   )
 }

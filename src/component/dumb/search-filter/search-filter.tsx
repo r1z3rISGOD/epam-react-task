@@ -11,24 +11,20 @@ export const SearchFilter : React.FC<SearchFilterProps> = ({ setSetting, setting
     return (
             <div className="search-filter">
                 <span className="search-filter__text">SEARCH BY</span>
-                <button onClick={(e) => {
-                  setSetting(e.target.value)
-                }} value="title" className="search-filter__button search-filter__button-active">TITLE</button>
-                <button onClick={(e) => {
-                  setSetting(e.target.value)
-                }} value="genres" className="search-filter__button">GENRE</button>
+                <button className="search-filter__button search-filter__button-active">TITLE</button>
+                <button onClick={() => {
+                  setSetting('genres')
+                }} value="genres" className="search-filter__button btn">GENRE</button>
             </div>
     )
   } if (setting === 'genres') {
     return (
             <div className="search-filter">
                 <span className="search-filter__text">SEARCH BY</span>
-                <button onClick={(e) => {
-                  setSetting(e.target.value)
-                }} value="title" className="search-filter__button ">TITLE</button>
-                <button onClick={(e) => {
-                  setSetting(e.target.value)
-                }} value="genre" className="search-filter__button search-filter__button-active">GENRE</button>
+                <button onClick={() => {
+                  setSetting('title')
+                }} value="title" className="search-filter__button btn">TITLE</button>
+                <button className="search-filter__button search-filter__button-active">GENRE</button>
             </div>
     )
   }

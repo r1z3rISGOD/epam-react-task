@@ -10,9 +10,7 @@ var ResultsCount = function (_a) {
             resultsCount,
             " movies found"));
     }
-    else {
-        return (React.createElement(React.Fragment, null));
-    }
+    return (React.createElement(React.Fragment, null));
 };
 exports.ResultsCount = ResultsCount;
 //# sourceMappingURL=results-count.js.map

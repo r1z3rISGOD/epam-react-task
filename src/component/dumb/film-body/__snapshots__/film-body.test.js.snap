@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`film body 1`] = `
+<div
+  className="film-body"
+>
+  <img
+    alt="Gemini"
+    className="film-body__img"
+    src="https://image.tmdb.org/t/p/w500/oIltQs7MPk7VQFG3DJfgC63mShU.jpg"
+  />
+  <div
+    className="film-data"
+  >
+    <div
+      className="film-data__title-rating"
+    >
+      <span
+        className="film-data__title"
+      >
+        Gemini
+      </span>
+      <span
+        className="film-data__rating"
+      >
+        10
+      </span>
+    </div>
+    <div
+      className="film-data__date-runtime"
+    >
+      <span
+        className="film-data__date"
+      >
+        2018
+      </span>
+      <span
+        className="film-data__time"
+      >
+        92 min
+      </span>
+    </div>
+    <span
+      className="film-data__overview"
+    >
+      A heinous crime tests the complex relationship between a tenacious personal assistant and her Hollywood starlet boss. As the assistant travels across Los Angeles to unravel the mystery, she must stay one step ahead of a determined policeman and confront her own understanding of friendship, truth and celebrity.
+    </span>
+  </div>
+</div>
+`;

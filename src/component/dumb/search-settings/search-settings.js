@@ -6,10 +6,10 @@ var search_filter_1 = require("../search-filter");
 var search_button_1 = require("../search-button");
 require("./search-settings.scss");
 var SearchSettings = function (_a) {
-    var request = _a.request, setting = _a.setting, setSetting = _a.setSetting, resultsSort = _a.resultsSort;
+    var request = _a.request, setting = _a.setting, setSetting = _a.setSetting, resultsSort = _a.resultsSort, fetchingAllFilms = _a.fetchingAllFilms;
     return (React.createElement("div", { className: "search-settings" },
         React.createElement(search_filter_1.SearchFilter, { setSetting: setSetting, setting: setting }),
-        React.createElement(search_button_1.SearchButton, { resultsSort: resultsSort, request: request, setting: setting })));
+        React.createElement(search_button_1.SearchButton, { resultsSort: resultsSort, request: request, setting: setting, fetchingAllFilms: fetchingAllFilms })));
 };
 exports.SearchSettings = SearchSettings;
 //# sourceMappingURL=search-settings.js.map

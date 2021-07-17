@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`film button 1`] = `
+<styled.button
+  className="btn"
+  onClick={[Function]}
+>
+  SEARCH
+</styled.button>
+`;

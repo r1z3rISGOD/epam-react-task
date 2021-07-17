@@ -2,7 +2,7 @@ import * as React from 'react'
 import './search-heading-neflix.scss'
 
 interface SearchHeadingNetflixProps {
-    children: React.ReactNode
+    children?: React.ReactNode
 }
 
 export const SearchHeadingNetflix : React.FC<SearchHeadingNetflixProps> = ({ children }) => {
